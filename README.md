@@ -2,7 +2,6 @@
 
 
 
-
 > Provide a transform solution to load `.properties` file as json in jest test
 
 
