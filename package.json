@@ -1,0 +1,34 @@
+{
+  "name": "jest-properties-loader",
+  "version": "1.0.0",
+  "description": "jest properties to json loader",
+  "main": "lib/index.js",
+  "repository": "https://github.com/aquariuslt/jest-properties-loader",
+  "author": "Aquariuslt<superaquariuslt@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "jest",
+    "jest-plugins",
+    "jest-loader",
+    "properties"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "properties": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "lodash": "^4.17.11"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/test/coverage",
+    "collectCoverageFrom": [
+      "<rootDir>/lib/**/*.js"
+    ]
+  }
+}
