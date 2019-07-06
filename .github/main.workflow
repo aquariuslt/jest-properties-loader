@@ -22,7 +22,7 @@ workflow "release" {
 
 action "filter:release" {
   uses = "actions/bin/filter@master"
-  args = "created created*"
+  args = "action created*"
 }
 
 
