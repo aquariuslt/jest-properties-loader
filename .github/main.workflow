@@ -1,6 +1,6 @@
 workflow "workflow/ci" {
   on = "push"
-  resolves = ["test"]
+  resolves = ["ci"]
 }
 
 action "install" {
@@ -13,6 +13,13 @@ action "test" {
   needs = ["install"]
   runs = "yarn"
   args = "test"
+}
+
+action "ci" {
+  uses = "actions/npm@master"
+  needs = ["test"]
+  secrets = ["CODECOV_TOKEN"]
+  runs = "bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN"
 }
 
 workflow "release" {
