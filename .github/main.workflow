@@ -23,5 +23,5 @@ workflow "release" {
 action "npm:release" {
   uses = "actions/npm@master"
   secrets = ["NPM_AUTH_TOKEN"]
-  runs = "npm publish"
+  args = "publish"
 }
