@@ -20,14 +20,8 @@ workflow "release" {
   resolves = ["npm:release"]
 }
 
-action "npm:login" {
-  uses = "actions/npm@master"
-  secrets = ["NPM_AUTH_TOKEN"]
-  runs = "echo //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN} > .npmrc"
-}
-
 action "npm:release" {
   uses = "actions/npm@master"
-  needs = ["npm:login"]
+  secrets = ["NPM_AUTH_TOKEN"]
   runs = "npm publish"
 }
