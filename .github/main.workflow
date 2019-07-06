@@ -17,7 +17,7 @@ action "test" {
 
 workflow "release" {
   on = "release"
-  resolves = ["npm:login"]
+  resolves = ["npm:release"]
 }
 
 action "npm:login" {
