@@ -20,7 +20,14 @@ workflow "release" {
   resolves = ["npm:release"]
 }
 
+action "filter:release" {
+  uses = "actions/bin/filter@master"
+  args = "tag v*"
+}
+
+
 action "npm:release" {
+  needs = "filter:release"
   uses = "actions/npm@master"
   secrets = ["NPM_AUTH_TOKEN"]
   args = "publish"
