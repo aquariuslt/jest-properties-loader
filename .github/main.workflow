@@ -16,10 +16,9 @@ action "test" {
 }
 
 action "ci" {
-  uses = "actions/npm@master"
+  uses = "Atrox/codecov-action@v0.1.2"
   needs = ["test"]
   secrets = ["CODECOV_TOKEN"]
-  runs = "sh <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN"
 }
 
 workflow "release" {
