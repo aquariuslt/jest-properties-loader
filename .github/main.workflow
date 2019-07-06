@@ -23,7 +23,7 @@ workflow "release" {
 action "npm:login" {
   uses = "actions/npm@master"
   secrets = ["NPM_AUTH_TOKEN"]
-  runs = "echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc"
+  runs = "echo //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN} > .npmrc"
 }
 
 action "npm:release" {
