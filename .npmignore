@@ -24,3 +24,9 @@ reports
 
 # editorconfig
 .editorconfig
+
+# test
+test
+
+# github workflow
+.github
