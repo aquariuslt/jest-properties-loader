@@ -10,7 +10,6 @@ describe('jest-property-loader', () => {
   it('# should load properties file in jest correctly', () => {
     const transformedResult = jestPropertyLoader.process(sampleSource);
 
-    expect(transformedResult).not.toBeUndefined();
-    expect(_.get(transformedResult, 'foo.bar')).toEqual('foobar');
+    expect(transformedResult).toMatchSnapshot();
   });
 });
