@@ -16,9 +16,10 @@ jobs:
         with:
           node-version: 10
       -
-        run: yarn test
-      -
-        run: yarn build
+        run: |
+          yarn install
+          yarn test
+          yarn build
 
   publish-npm:
     needs: build
