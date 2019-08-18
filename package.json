@@ -19,9 +19,9 @@
     "properties": "^1.2.1"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "jest": "^24.8.0",
-    "lodash": "^4.17.11"
+    "@types/jest": "^24.0.17",
+    "jest": "^24.9.0",
+    "lodash": "^4.17.15"
   },
   "jest": {
     "testEnvironment": "node",
