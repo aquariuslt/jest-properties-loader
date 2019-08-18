@@ -1,0 +1,38 @@
+name: Publish to NPM
+
+on:
+  release:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v1
+      -
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      -
+        run: yarn test
+      -
+        run: yarn build
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v1
+      -
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+          registry-url: https://registry.npmjs.org/
+      -
+        run: npm publish
+        if: github.event.action == 'created'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
