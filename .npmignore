@@ -27,6 +27,7 @@ reports
 
 # source
 src
+tsconfig.json
 
 # test
 test
