@@ -25,6 +25,9 @@ reports
 # editorconfig
 .editorconfig
 
+# source
+src
+
 # test
 test
 
