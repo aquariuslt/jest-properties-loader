@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`jest-property-loader # should load properties file in jest correctly 1`] = `"module.exports={\\"foo\\":{\\"bar\\":\\"foobar\\"}}"`;
