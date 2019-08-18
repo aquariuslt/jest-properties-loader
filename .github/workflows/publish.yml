@@ -10,12 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: SCM
         uses: actions/checkout@v1
       -
+        name: Setup Node Environment
         uses: actions/setup-node@v1
         with:
           node-version: 10
       -
+        name: Node CI
         run: |
           yarn install
           yarn test
@@ -26,18 +29,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: SCM
         uses: actions/checkout@v1
       -
+        name: Setup Node Environment
         uses: actions/setup-node@v1
         with:
           node-version: 10
           registry-url: https://registry.npmjs.org/
       -
+        name: Node CI
         run: |
           yarn install
           yarn test
           yarn build
       -
+        name: Publish to NPM Registry
         run: npm publish
         if: github.event.action == 'created'
         env:

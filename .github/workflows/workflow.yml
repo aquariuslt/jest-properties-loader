@@ -1,4 +1,4 @@
-name: Test & Build
+name: Node CI
 
 on: [push]
 jobs:
@@ -12,6 +12,7 @@ jobs:
 
     steps:
       -
+        name: SCM
         uses: actions/checkout@v1
       -
         name: Use Node.js ${{ matrix.node-version }}
