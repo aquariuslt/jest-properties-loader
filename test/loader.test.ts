@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import * as loader from '@/index';
+import * as loader from '../src/index';
 
 const sampleSource = fs.readFileSync(path.join(__dirname, './__fixtures__/sample.properties')).toString();
 
