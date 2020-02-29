@@ -1,51 +1,28 @@
 name: publish
 
 on:
-  release:
+  push:
     branches:
       - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: SCM
-        uses: actions/checkout@v1
-      -
-        name: Setup Node Environment
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10
-      -
-        name: Node CI
-        run: |
-          yarn install
-          yarn test
-          yarn build
-
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
-      -
-        name: SCM
-        uses: actions/checkout@v1
-      -
-        name: Setup Node Environment
+      - name: SCM
+        uses: actions/checkout@v2
+      - name: Setup Node Environment
         uses: actions/setup-node@v1
         with:
-          node-version: 10
-          registry-url: https://registry.npmjs.org/
-      -
-        name: Node CI
+          node-version: 12
+      - name: Install Dependencies and Build
         run: |
-          yarn install
+          yarn
           yarn test
           yarn build
-      -
-        name: Publish to NPM Registry
-        run: npm publish
-        if: github.event.action == 'created'
+      - name: Semantic Release
+        run: |
+          yarn release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

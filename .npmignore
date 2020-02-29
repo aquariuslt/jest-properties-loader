@@ -29,8 +29,6 @@ reports
 src
 tsconfig.json
 
-# test
-test
 
 # github workflow
 .github

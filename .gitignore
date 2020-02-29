@@ -1,14 +1,39 @@
-## Jetbrains
+# compiled output
+/dist
+/node_modules
 
-.idea
-*.iml
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
+# OS
+.DS_Store
 
-## Node
-node_modules
+# Tests
+/reports
+/coverage
+/.nyc_output
 
-## coverage
-coverage
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-## Dist
-lib
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Node
+yarn.lock
+package-lock.json
