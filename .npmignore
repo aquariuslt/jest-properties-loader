@@ -15,7 +15,6 @@ yarn.lock
 
 # Build & Distribution
 build
-dist
 
 # Test Report and Output
 coverage
