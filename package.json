@@ -20,6 +20,9 @@
     "test:cov": "jest --coverage",
     "release": "semantic-release"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "properties": "^1.2.1"
   },
