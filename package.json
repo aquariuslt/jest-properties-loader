@@ -30,7 +30,7 @@
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.26",
+    "@types/node": "16.11.27",
     "jest": "27.5.1",
     "lodash": "4.17.21",
     "semantic-release": "19.0.2",
