@@ -33,7 +33,7 @@
     "@types/node": "20.11.30",
     "jest": "28.1.3",
     "lodash": "4.17.21",
-    "semantic-release": "19.0.5",
+    "semantic-release": "23.0.6",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
